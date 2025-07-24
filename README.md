@@ -9,4 +9,16 @@ We use machine learning to identify excess inventory in real-time and blockchain
 - [x] Tanstack Query
 - [x] Zod Schema
 
+## Known Issues
+
+none
+
+## Contributing
+
+To contribute to this project, please submit any issues or pull requests on the GitHub repository.
+
+## License
+
+This project is licensed under the MIT License.  See the [LICENSE](LICENSE) file for details
+
 🌍 Reduce waste. 🍽️ Feed people. 🔗 Build trust.
