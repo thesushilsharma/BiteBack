@@ -9,8 +9,8 @@ We use machine learning to identify excess inventory in real-time and blockchain
 - [x] Tanstack Start
 - [x] Tanstack Query
 - [x] Zod Schema
-- [x]  Blockchain - Ethereum Base Chain (tenderly sandbox)
-- [x]  AI
+- [x] Blockchain - Ethereum Base Chain (tenderly sandbox)
+- [x] AI
 
 ## 💡 Roadmap
 
