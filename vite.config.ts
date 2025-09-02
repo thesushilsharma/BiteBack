@@ -1,15 +1,31 @@
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import { defineConfig } from 'vite'
-import tsConfigPaths from 'vite-tsconfig-paths'
+import { tanstackStart } from '@tanstack/react-start/plugin/vite'
+import viteReact from '@vitejs/plugin-react'
+import viteTsConfigPaths from 'vite-tsconfig-paths'
+import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
-  server: {
-    port: 3000,
-  },
+import postgresPlugin from '@neondatabase/vite-plugin-postgres'
+
+const config = defineConfig({
   plugins: [
-    tsConfigPaths({
+    postgresPlugin({
+      seed: {
+        type: 'sql-script',
+        path: 'db/init.sql',
+      },
+      referrer: 'create-tanstack',
+    }),
+
+    // this is the plugin that enables path aliases
+    viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
-    tanstackStart(),
+    tailwindcss(),
+    tanstackStart({
+      customViteReactPlugin: true,
+    }),
+    viteReact(),
   ],
 })
+
+export default config
