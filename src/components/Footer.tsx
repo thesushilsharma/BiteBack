@@ -6,10 +6,10 @@ export function Footer() {
   return (
     <footer className="border-t">
       <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-        <p className="text-sm text-muted-foreground">© {currentYear} Loop. All rights reserved.</p>
+        <p className="text-sm text-muted-foreground">© {currentYear} BiteBack. All rights reserved.</p>
         <div className="flex items-center space-x-4 mt-4 md:mt-0">
           <a
-            href="https://github.com"
+            href="https://github.com/thesushilsharma/BiteBack"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary"
