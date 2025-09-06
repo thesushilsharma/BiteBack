@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
 	component: App,
+	notFoundComponent: () => <div>This page doesn't exist!</div>
 });
 
 function App() {
