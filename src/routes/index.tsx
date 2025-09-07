@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<section className="prose max-w-none p-6 md:p-12 lg:p-24 mx-auto text-center">
+		<section className="prose max-w-none p-6 md:p-12 lg:p-24 mx-auto text-center min-h-[80vh] flex flex-col items-center justify-center">
 			<h1 className="text-3xl font-bold">🥪 BiteBack</h1>
 			<p className="text-gray-600">
 				AI-powered and blockchain-enabled platform to detect surplus food and

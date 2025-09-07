@@ -6,7 +6,8 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanstackDevtools } from "@tanstack/react-devtools";
 
-import Header from "../components/Header";
+import Header from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 
@@ -54,6 +55,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<main>
 				{children}
 				</main>
+				<Footer/>
 				<TanstackDevtools
 					config={{
 						position: "bottom-left",
