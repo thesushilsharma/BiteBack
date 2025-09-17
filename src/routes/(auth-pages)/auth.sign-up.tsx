@@ -1,25 +1,19 @@
 import { Layout } from "@/components/Layout"
+import { signUp, useSession } from "@/lib/auth-client"
 import { createFileRoute, Link, redirect } from "@tanstack/react-router"
-import { createAuthClient } from "better-auth/react"
-
-interface RouterContext {
-  authState: {
-    isAuthenticated: boolean
-    user?: any
-  }
-}
 
 export const Route = createFileRoute("/(auth-pages)/auth/sign-up")({
+  //  beforeLoad: async () => {
+  //   const { data: session } = useSession()
+
+  //   if (session) {
+  //     throw redirect({ to: "/dashboard" })
+  //   }
+  // },
   component: RouteComponent,
-  beforeLoad: async ({ context }: { context: RouterContext }) => {
-    if (context.authState.isAuthenticated) {
-      throw redirect({ to: "/" })
-    }
-  },
 })
 
 function RouteComponent() {
-  const { signUp } = createAuthClient()
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
@@ -79,7 +73,7 @@ function RouteComponent() {
         </button>
       </form>
       <small>
-        <Link to="/sign-in" className="group">
+        <Link to="/auth/sign-in" className="group">
           Do you already have an account?{" "}
           <span className="underline group-hover:no-underline">Sign In</span>
         </Link>
