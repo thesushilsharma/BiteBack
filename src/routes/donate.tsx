@@ -1,3 +1,4 @@
+import { useSession } from '@/lib/auth-client';
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/donate')({
@@ -5,5 +6,8 @@ export const Route = createFileRoute('/donate')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/donate"!</div>
+  const { data: session } = useSession();
+    return <div>
+      {session && <p>Client Signed in as {session.user.name}</p>}
+    </div>
 }
