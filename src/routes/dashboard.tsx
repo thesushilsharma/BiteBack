@@ -1,3 +1,4 @@
+import { useSession } from '@/lib/auth-client';
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/dashboard')({
@@ -5,5 +6,8 @@ export const Route = createFileRoute('/dashboard')({
 })
 
 function RouteComponent() {
-  return <div>Hello "/dashboard"!</div>
+const { data: session } = useSession();
+  return <div>
+    {session && <p>Client Signed in as {session.user.name}</p>}
+  </div>
 }
